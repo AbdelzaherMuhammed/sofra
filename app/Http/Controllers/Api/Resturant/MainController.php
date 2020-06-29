@@ -86,6 +86,7 @@ class MainController extends Controller
             [
                 'name' => 'unique:categories,name,' . $request->category_id,
                 'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+                'category_id' => 'required|exists:categories,id',
             ]);
         if ($validator->fails()) {
             $data = $validator->errors();
@@ -117,6 +118,16 @@ class MainController extends Controller
 
     public function deleteCategory(Request $request)
     {
+        $validator = validator()->make($request->all(),
+            [
+                'category_id' => 'required|exists:categories,id',
+            ]);
+
+        if ($validator->fails()) {
+            $data = $validator->errors();
+            return responseJson(0, $validator->errors(), $data);
+        }
+
         $category = Category::find($request->category_id);
         $category->delete();
         if ($category) {
@@ -188,6 +199,7 @@ class MainController extends Controller
                 'price' => '|numeric',
                 'price_in_offer' => 'numeric',
                 'category_id' => 'exists:categories,id',
+                'product_id' => 'required|exists:products,id',
             ]);
 
         if ($validator->fails()) {
@@ -226,6 +238,16 @@ class MainController extends Controller
 
     public function deleteProduct(Request $request)
     {
+        $validator = validator()->make($request->all(),
+            [
+                'product_id' => 'required|exists:products,id',
+            ]);
+
+        if ($validator->fails()) {
+            $data = $validator->errors();
+            return responseJson(0, $validator->errors(), $data);
+        }
+
         $product = Product::find($request->product_id);
         $product->delete();
 
@@ -299,6 +321,7 @@ class MainController extends Controller
                 'offer_description' => 'max:100',
                 'offer_start_date' => 'date',
                 'offer_expire_date' => 'date',
+                'offer_id' => 'required|exists:offers,id',
             ]);
 
         if ($validator->fails()) {
@@ -330,7 +353,16 @@ class MainController extends Controller
     }
 
     public function deleteOffer(Request $request)
-    {
+    { $validator = validator()->make($request->all(),
+        [
+            'offer_id' => 'required|exists:offers,id',
+        ]);
+
+        if ($validator->fails()) {
+            $data = $validator->errors();
+            return responseJson(0, $validator->errors(), $data);
+        }
+
         $offer = Offer::find($request->offer_id);
 
         $offer->delete();
