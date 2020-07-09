@@ -14,6 +14,7 @@ class CreateNotificationsTable extends Migration {
 			$table->string('content');
 			$table->string('notifiable_type');
 			$table->integer('notifiable_id');
+			$table->integer('order_id');
 			$table->tinyInteger('is_read')->default('0');
 		});
 	}

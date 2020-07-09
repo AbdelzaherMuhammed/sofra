@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Api;
 use App\Models\Category;
 use App\Models\Contact;
 use App\Models\Offer;
+use App\Models\Payment;
+use App\Models\PaymentMethod;
 use App\Models\Product;
 use App\Models\Resturant;
 use App\Models\Review;
@@ -13,7 +15,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class MainController extends Controller
-{//$request()->user()->contact
+{
 
     public function resturants(Request $request)
     {
@@ -72,6 +74,35 @@ class MainController extends Controller
     {
         $categories = Category::all();
         return responseJson(1,'success' , $categories);
+    }
+
+
+    public function paymentMethods()
+    {
+        $paymentMethods = PaymentMethod::all();
+
+        return responseJson(1 , 'success' , $paymentMethods);
+    }
+
+    public function createPayment(Request $request)
+    {
+        $validator = validator()->make($request->all(),
+            [
+                'resturant_id' => 'required|exists:resturants,id',
+                'money_paid'   => 'required|numeric',
+                'day_of_payment'=>'required|date'
+            ]);
+
+        if ($validator->fails()) {
+            $data = $validator->errors();
+            return responseJson(0, $validator->errors(), $data);
+        }
+
+        $payments = Payment::create($request->all());
+        $resturant = Resturant::find($request->resturant_id);
+        $sum = $resturant->orders()->sum('net');
+        $payments->update(['resturant_sales' => $sum]);
+        return $payments;
     }
 
 

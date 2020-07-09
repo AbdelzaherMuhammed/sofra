@@ -37,6 +37,11 @@ class Client extends Authenticatable
         return $this->belongsTo('App\Models\Neighborhood');
     }
 
+    public function tokens()
+    {
+        return $this->hasMany('App\Models\Token');
+    }
+
     protected $hidden = [
         'password', 'api_token', 'pin_code'
     ];

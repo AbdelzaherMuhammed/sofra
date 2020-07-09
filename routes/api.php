@@ -24,6 +24,8 @@ Route::group(['namespace' => 'Api' , 'prefix' => 'v1'] , function (){
     Route::get('about-us' , 'MainController@about');
     Route::get('resturant-information' , 'MainController@resturant');
     Route::get('categories' , 'MainController@categories');
+    Route::get('payment-methods' , 'MainController@paymentMethods');
+    Route::post('create-payment' , 'MainController@createPayment');
 
     // client auth cycle
     Route::group(['namespace' => 'Client' , 'prefix' => 'client'] , function (){
@@ -38,6 +40,17 @@ Route::group(['namespace' => 'Api' , 'prefix' => 'v1'] , function (){
             Route::post('change-password' , 'AuthController@changePassword');
             Route::post('client-contact' , 'MainController@contact');
             Route::post('add-review' , 'MainController@addReview');
+            Route::post('create-order' , 'MainController@CreateOrder');
+            Route::get('order-details' , 'MainController@orderDetails');
+            Route::get('new-orders' , 'MainController@newOrder');
+            Route::get('current-orders' , 'MainController@currentOrder');
+            Route::get('last-orders' , 'MainController@lastOrder');
+            Route::post('register-notification-token' , 'AuthController@registerToken');
+            Route::post('remove-notification-token' , 'AuthController@removeToken');
+            Route::post('deliver-order' , 'MainController@deliverOrder');
+            Route::post('decline-order' , 'MainController@declineOrder');
+            Route::get('notification-list' , 'MainController@notificationList');
+            Route::post('notification-update' , 'MainController@notificationUpdate');
         });
     });
 
@@ -49,6 +62,8 @@ Route::group(['namespace' => 'Api' , 'prefix' => 'v1'] , function (){
         Route::post('login' , 'AuthController@login');
         Route::post('reset-password' , 'AuthController@resetPassword');
         Route::post('new-password' , 'AuthController@newPassword');
+        Route::post('new-password' , 'AuthController@newPassword');
+
 
 
         Route::group(['middleware' => 'auth:resturant-api'] , function (){
@@ -68,8 +83,16 @@ Route::group(['namespace' => 'Api' , 'prefix' => 'v1'] , function (){
             Route::post('edit-offer' , 'MainController@editOffer');
             Route::post('delete-offer' , 'MainController@deleteOffer');
             Route::get('reviews' , 'MainController@reviews');
-
-
+            Route::get('new-orders' , 'MainController@newOrder');
+            Route::get('current-orders' , 'MainController@currentOrder');
+            Route::get('last-orders' , 'MainController@lastOrder');
+            Route::post('register-notification-token' , 'AuthController@registerToken');
+            Route::post('remove-notification-token' , 'AuthController@removeToken');
+            Route::post('accept-order' , 'MainController@acceptOrder');
+            Route::post('reject-order' , 'MainController@rejectOrder');
+            Route::get('notification-list' , 'MainController@notificationList');
+            Route::post('notification-update' , 'MainController@notificationUpdate');
+            Route::get('commission' , 'MainController@commission');
         });
 
 

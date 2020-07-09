@@ -10,6 +10,13 @@ class Resturant extends Model
     protected $table = 'resturants';
     public $timestamps = true;
     protected $fillable = array('name', 'minimum_charge', 'delivery_fees', 'status', 'image', 'neighborhood_id', 'email', 'password', 'delivery_time', 'phone', 'whatsapp' , 'pin_code');
+    protected $appends = ['review'];
+
+    public function getReviewAttribute()
+    {
+        return $this->reviews()->avg('review');
+    }
+
 
     public function orders()
     {
@@ -56,7 +63,15 @@ class Resturant extends Model
         return $this->morphMany('App\Models\Contact', 'contactable');
     }
 
+    public function tokens()
+    {
+        return $this->hasMany('App\Models\Token');
+    }
+
     protected $hidden = [
         'password', 'api_token','pin_code'
     ];
+
+
+
 }

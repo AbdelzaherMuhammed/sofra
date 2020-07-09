@@ -9,31 +9,35 @@ class Order extends Model
 
     protected $table = 'orders';
     public $timestamps = true;
-    protected $fillable = array('address', 'payment_method_id', 'cost', 'sub_total', 'total', 'commission', 'state', 'client_id', 'resturant_id', 'notes', 'special_order_details');
+    protected $fillable = array('address', 'payment_method_id', 'cost', 'total', 'net', 'commission', 'state',
+        'client_id', 'resturant_id', 'notes' ,'reason_of_rejection');
 
-    public function resturent()
+    public function resturant()
     {
-        return $this->belongsTo('Resturant');
+        return $this->belongsTo('App\Models\Resturant');
     }
 
     public function payment_method()
     {
-        return $this->belongsTo('PaymentMethod');
+        return $this->belongsTo('App\Models\PaymentMethod');
     }
 
     public function client()
     {
-        return $this->blongsTo('App\Models\Client');
+        return $this->belongsTo('App\Models\Client');
     }
 
     public function products()
     {
-        return $this->manyToMany('App\Models\Product' );
+        return $this->belongsToMany('App\Models\Product')->withPivot('price' , 'quantity' , 'note');
     }
 
     public function notifications()
     {
-        return $this->morphToMany('Notification', 'notificatable');
+        return $this->hasMany('App\Models\Notification');
     }
+
+
+
 
 }

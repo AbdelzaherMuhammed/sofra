@@ -13,14 +13,14 @@ class CreateOrdersTable extends Migration {
 			$table->string('address');
 			$table->integer('payment_method_id')->unsigned();
 			$table->decimal('cost');
-			$table->decimal('sub_total');
 			$table->decimal('total');
+			$table->decimal('net');
 			$table->decimal('commission');
-			$table->enum('state', array('pending', 'accepted', 'deliverd', 'rejected', 'declined'));
+			$table->enum('state', array('pending', 'accepted', 'delivered', 'rejected', 'declined'));
 			$table->integer('client_id');
 			$table->integer('resturant_id')->unsigned();
 			$table->string('notes')->nullable();
-			$table->string('special_order_details')->nullable();
+
 		});
 	}
 

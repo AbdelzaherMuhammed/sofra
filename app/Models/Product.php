@@ -10,6 +10,7 @@ class Product extends Model
     protected $table = 'products';
     public $timestamps = true;
     protected $fillable = array('name', 'description', 'image', 'price', 'price_in_offer', 'category_id', 'resturant_id');
+    protected $appends=['is_offer'];
 
     public function category()
     {
@@ -23,6 +24,19 @@ class Product extends Model
     public function orders()
     {
         return $this->manyToMany('App\Models\Order');
+    }
+
+    protected $hidden = [
+        'pivot'
+    ];
+
+    public function getIsOfferAttribute()
+    {
+        if ($this->price_in_offer != null && $this->price_in_offer < $this->price) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }

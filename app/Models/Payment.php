@@ -9,7 +9,7 @@ class Payment extends Model
 
     protected $table = 'payments';
     public $timestamps = true;
-    protected $fillable = array('resturant_id', 'money_paied', 'day_of_payment', 'notes');
+    protected $fillable = array('resturant_id', 'money_paid', 'day_of_payment', 'notes' , 'resturant_sales');
 
     public function resturant()
     {
