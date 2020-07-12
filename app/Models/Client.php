@@ -10,7 +10,7 @@ class Client extends Authenticatable
 
     protected $table = 'clients';
     public $timestamps = true;
-    protected $fillable = array('name', 'phone', 'email', 'password', 'neighborhood_id', 'pin_code' , 'image');
+    protected $fillable = array('name', 'phone', 'email', 'password', 'neighborhood_id', 'pin_code' );
 
     public function reviews()
     {

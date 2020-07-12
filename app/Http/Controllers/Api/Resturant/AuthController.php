@@ -171,7 +171,7 @@ class AuthController extends Controller
             'name' => 'unique:resturants,name,' . $request->user()->id,
             'email' => 'unique:resturants,email,' . $request->user()->id,
             'phone' => 'min:11|unique:resturants,phone,' . $request->user()->id,
-            'image' => 'ؤشimage|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
             'password' => 'confirmed',
             'neighborhood_id' => 'exists:neighborhoods,id',
             'minimum_charge' => 'numeric',
@@ -189,15 +189,24 @@ class AuthController extends Controller
         $loginUser = $request->user();
         $loginUser->update($request->all());
 
+
         // update image
         if ($request->hasFile('image')) {
+
+            $path = public_path();
+            $destinationPath = $path . '/images/resturant/';
+            if (file_exists($destinationPath.$loginUser->image))
+            {
+                unlink($destinationPath.$loginUser->image);
+            }
+
             $path = public_path();
             $destinationPath = $path . '/images/resturant/'; // upload path
             $image = $request->file('image');
             $extension = $image->getClientOriginalExtension(); // getting image extension
             $name = time() . '' . rand(11111, 99999) . '.' . $extension; // renameing image
             $image->move($destinationPath, $name); // uploading file to given path
-            $loginUser->image = 'images/' . $name;
+            $loginUser->image = $name;
             $loginUser->save();
         }
 

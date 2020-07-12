@@ -9,7 +9,7 @@ class Product extends Model
 
     protected $table = 'products';
     public $timestamps = true;
-    protected $fillable = array('name', 'description', 'image', 'price', 'price_in_offer', 'category_id', 'resturant_id');
+    protected $fillable = array('name', 'description', 'price', 'price_in_offer', 'category_id', 'resturant_id');
     protected $appends=['is_offer'];
 
     public function category()

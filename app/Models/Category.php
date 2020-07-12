@@ -9,7 +9,7 @@ class Category extends Model
 
     protected $table = 'categories';
     public $timestamps = true;
-    protected $fillable = array('name', 'image' , 'resturant_id');
+    protected $fillable = array('name' , 'resturant_id');
 
     public function resturant()
     {
@@ -21,9 +21,5 @@ class Category extends Model
         return $this->hasMany('App\Models\Product');
     }
 
-    public function offers()
-    {
-        return $this->hasMany('App\Models\Offer');
-    }
 
 }

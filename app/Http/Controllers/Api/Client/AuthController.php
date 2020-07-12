@@ -179,13 +179,21 @@ class AuthController extends Controller
         $loginUser->update($request->all());
 
         if ($request->hasFile('image')) {
+
             $path = public_path();
-            $destinationPath = $path . '/images'; // upload path
+            $destinationPath = $path . '/images/client/';
+            if (file_exists($destinationPath.$loginUser->image))
+            {
+                unlink($destinationPath.$loginUser->image);
+            }
+
+            $path = public_path();
+            $destinationPath = $path . '/images/client/'; // upload path
             $image = $request->file('image');
             $extension = $image->getClientOriginalExtension(); // getting image extension
             $name = time() . '' . rand(11111, 99999) . '.' . $extension; // renameing image
             $image->move($destinationPath, $name); // uploading file to given path
-            $loginUser->image = 'images/' . $name;
+            $loginUser->image = $name;
             $loginUser->save();
         }
 

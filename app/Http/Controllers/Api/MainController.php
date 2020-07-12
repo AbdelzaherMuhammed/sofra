@@ -99,9 +99,6 @@ class MainController extends Controller
         }
 
         $payments = Payment::create($request->all());
-        $resturant = Resturant::find($request->resturant_id);
-        $sum = $resturant->orders()->sum('net');
-        $payments->update(['resturant_sales' => $sum]);
         return $payments;
     }
 

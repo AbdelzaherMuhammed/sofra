@@ -11,16 +11,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="810fb71f-f3db-4ab9-97e4-52ca1688fbf3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/images/resturant/categories/159435427362388.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/resturant/categories/159435447319644.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/categories/city-search.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/categories/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/categories/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/categories/form.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/categories/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/home.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/partials/validation_errors.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sofra.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sofra.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Client/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Client/MainController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Client/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Client/AuthController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/MainController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Resturant/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Resturant/AuthController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Resturant/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Resturant/MainController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Notification.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Notification.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/CheckPayment.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Client.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Resturant.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Resturant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_06_22_081641_create_orders_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_06_22_081641_create_orders_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/client/159310803173594.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/client/159327585227053.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resturant/categories/159313425280147.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resturant/categories/159313560260298.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resturant/categories/159327633042103.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resturant/categories/159327636572251.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resturant/categories/159327638729703.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resturant/categories/159327759688557.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resturant/categories/159328336981870.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resturant/categories/159328346082606.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resturant/products/159328688033511.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +62,13 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="blade" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -119,6 +158,8 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
       <path value="$PROJECT_DIR$/vendor/psr/log" />
       <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/laracasts/flash" />
+      <path value="$PROJECT_DIR$/vendor/laravelcollective/html" />
     </include_path>
   </component>
   <component name="ProjectId" id="1did76JNnUa955qLa22w9jmqGiP" />
@@ -132,8 +173,20 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../restfulapi" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers" />
     <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\sofra\app\Http\Controllers" />
+      <recent name="C:\laragon\www\sofra\resources\views\admin" />
+      <recent name="C:\laragon\www\sofra\resources\views\admin\cities" />
+      <recent name="C:\laragon\www\sofra\public" />
+      <recent name="C:\laragon\www\sofra\resources\views" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\sofra\resources\views\admin" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -161,6 +214,14 @@
       <workItem from="1593744170739" duration="1203000" />
       <workItem from="1593818946847" duration="114000" />
       <workItem from="1594009023149" duration="6410000" />
+      <workItem from="1594206120555" duration="7521000" />
+      <workItem from="1594342557541" duration="94000" />
+      <workItem from="1594342666970" duration="13813000" />
+      <workItem from="1594446008082" duration="1191000" />
+      <workItem from="1594454112106" duration="16000" />
+      <workItem from="1594468003788" duration="72000" />
+      <workItem from="1594532287156" duration="1268000" />
+      <workItem from="1594548010517" duration="5853000" />
     </task>
     <servers />
   </component>
@@ -188,13 +249,17 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1593290328983" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1594111187710">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1594555720110">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1594111187710" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1594111243940">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1594555720110" />
+    <state x="516" y="135" key="NewPhpClassDialog" timestamp="1594207451176">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1594111243940" />
+    <state x="516" y="135" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1594207451176" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1594554820024">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1594554820024" />
   </component>
 </project>

@@ -9,7 +9,7 @@ class Resturant extends Model
 
     protected $table = 'resturants';
     public $timestamps = true;
-    protected $fillable = array('name', 'minimum_charge', 'delivery_fees', 'status', 'image', 'neighborhood_id', 'email', 'password', 'delivery_time', 'phone', 'whatsapp' , 'pin_code');
+    protected $fillable = array('name', 'minimum_charge', 'delivery_fees', 'status', 'neighborhood_id', 'email', 'password', 'delivery_time', 'phone', 'whatsapp' , 'pin_code');
     protected $appends = ['review'];
 
     public function getReviewAttribute()

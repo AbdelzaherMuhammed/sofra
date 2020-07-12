@@ -14,6 +14,7 @@ use App\Models\Client;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class MainController extends Controller
 {
@@ -68,13 +69,14 @@ class MainController extends Controller
         $category = $request->user()->categories()->create($request->all());
 
         if ($request->hasFile('image')) {
+
             $path = public_path();
             $destinationPath = $path . '/images/resturant/categories'; // upload path
             $image = $request->file('image');
             $extension = $image->getClientOriginalExtension(); // getting image extension
             $name = time() . '' . rand(11111, 99999) . '.' . $extension; // renameing image
             $image->move($destinationPath, $name); // uploading file to given path
-            $category->image = 'images/' . $name;
+            $category->image =  $name;
             $category->save();
         }
         if ($category) {
@@ -99,17 +101,26 @@ class MainController extends Controller
         }
 
         $category = Category::find($request->category_id);
-
+//        dd($category->image);
         $category->update($request->all());
 
         if ($request->hasFile('image')) {
+
+            $path = public_path();
+            $destinationPath = $path . '/images/resturant/categories/';
+            if (file_exists($destinationPath. $category->image))
+            {
+                unlink($destinationPath. $category->image);
+            }
+
+
             $path = public_path();
             $destinationPath = $path . '/images/resturant/categories'; // upload path
             $image = $request->file('image');
             $extension = $image->getClientOriginalExtension(); // getting image extension
             $name = time() . '' . rand(11111, 99999) . '.' . $extension; // renameing image
             $image->move($destinationPath, $name); // uploading file to given path
-            $category->image = 'images/' . $name;
+            $category->image =  $name;
             $category->save();
         }
 
@@ -134,6 +145,15 @@ class MainController extends Controller
         }
 
         $category = Category::find($request->category_id);
+
+
+        $path = public_path();
+        $destinationPath = $path . '/images/resturant/categories/';
+        if (file_exists($destinationPath.$category->image))
+        {
+            unlink($destinationPath. $category->image);
+        }
+
         $category->delete();
         if ($category) {
             return responseJson(1, 'تم الحذف بنجاح');
@@ -177,13 +197,14 @@ class MainController extends Controller
         $product = $request->user()->products()->create($request->all());
 
         if ($request->hasFile('image')) {
+
             $path = public_path();
             $destinationPath = $path . '/images/resturant/products'; // upload path
             $image = $request->file('image');
             $extension = $image->getClientOriginalExtension(); // getting image extension
             $name = time() . '' . rand(11111, 99999) . '.' . $extension; // renameing image
             $image->move($destinationPath, $name); // uploading file to given path
-            $product->image = 'images/' . $name;
+            $product->image = $name;
             $product->save();
         }
 
@@ -218,16 +239,23 @@ class MainController extends Controller
         $product->update($request->all());
 
         if ($request->hasFile('image')) {
+
+            $path = public_path();
+            $destinationPath = $path . '/images/resturant/products/';
+            if (file_exists($destinationPath. $product->image))
+            {
+                unlink($destinationPath. $product->image);
+            }
+
             $path = public_path();
             $destinationPath = $path . '/images/resturant/products'; // upload path
             $image = $request->file('image');
             $extension = $image->getClientOriginalExtension(); // getting image extension
             $name = time() . '' . rand(11111, 99999) . '.' . $extension; // renameing image
             $image->move($destinationPath, $name); // uploading file to given path
-            $product->image = 'images/' . $name;
+            $product->image = $name;
             $product->save();
         }
-
 
 //        if ($update) {
 //            return responseJson(1, 'تم التعديل بنجاح' , $product);
@@ -255,6 +283,14 @@ class MainController extends Controller
         }
 
         $product = Product::find($request->product_id);
+
+        $path = public_path();
+        $destinationPath = $path . '/images/resturant/products/';
+        if (file_exists($destinationPath. $product->image))
+        {
+            unlink($destinationPath. $product->image);
+        }
+
         $product->delete();
 
         if ($product) {
@@ -304,7 +340,7 @@ class MainController extends Controller
             $extension = $image->getClientOriginalExtension(); // getting image extension
             $name = time() . '' . rand(11111, 99999) . '.' . $extension; // renameing image
             $image->move($destinationPath, $name); // uploading file to given path
-            $offer->image = 'images/' . $name;
+            $offer->image =  $name;
             $offer->save();
         }
 
@@ -339,13 +375,21 @@ class MainController extends Controller
         $offer->update($request->all());
 
         if ($request->hasFile('image')) {
+
+            $path = public_path();
+            $destinationPath = $path . '/images/resturant/offers/';
+            if (file_exists($destinationPath. $offer->image))
+            {
+                unlink($destinationPath. $offer->image);
+            }
+
             $path = public_path();
             $destinationPath = $path . '/images/resturant/offers'; // upload path
             $image = $request->file('image');
             $extension = $image->getClientOriginalExtension(); // getting image extension
             $name = time() . '' . rand(11111, 99999) . '.' . $extension; // renameing image
             $image->move($destinationPath, $name); // uploading file to given path
-            $offer->image = 'images/' . $name;
+            $offer->image =  $name;
             $offer->save();
         }
 
@@ -370,6 +414,13 @@ class MainController extends Controller
         }
 
         $offer = Offer::find($request->offer_id);
+
+        $path = public_path();
+        $destinationPath = $path . '/images/resturant/offers/';
+        if (file_exists($destinationPath. $offer->image))
+        {
+            unlink($destinationPath. $offer->image);
+        }
 
         $offer->delete();
 
@@ -587,10 +638,9 @@ class MainController extends Controller
 
         $notes = Payment::get(['notes']);
 
-        $resturantSales = Payment::get(['resturant_sales']);
 //        return $sum;
 
-        $collection = array_collapse(['resturant_sales' => $resturantSales , 'commission'=>$commission , 'commission_text' =>$commission_text ,
+        $collection = array_collapse(['commission'=>$commission , 'commission_text' =>$commission_text ,
             'money_paid' =>$moneyPaid , 'day_of_payment' => $dayOfPayments , 'notes' => $notes
             ]);
 
